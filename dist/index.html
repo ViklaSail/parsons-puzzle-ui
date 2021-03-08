@@ -321,7 +321,7 @@
     var initialJs = [];
     var lines = initial.replace(/"/g, '\\"').split('\n');
     for (var i = 0; i < lines.length; i++) {
-      var line = '\"' + lines[i];
+      var line = '\"' + lines[i] + '//kommentti';
       line += i < lines.length -1 ? '\\n' + '\" +' : '\"';
       initialJs.push(i !== 0 ? '    ' + line : line);
     }
