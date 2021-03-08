@@ -373,6 +373,7 @@
 
     if (parsons) {
       var settings = parsons.export();
+      console.log(settings)
       var isTurtle = settings.options.grader  === 'ParsonsWidget._graders.TurtleGrader';
       settings.options.grader = convertGraderToParsonFormat(settings.options.grader);
 
@@ -382,6 +383,7 @@
       x[0].innerHTML = "Hello World!";
       console.log("helloworld");
       console.log(settings.initial)
+      console.log(typeof settings.initial);
       parsonsPuzzle.shuffleLines();
     }
 
