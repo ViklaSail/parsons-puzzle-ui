@@ -37,7 +37,7 @@ const renderInitialCodeBlock = (codeBlocks: string): Cash => {
   const codeBlocksContainer: Cash = $('<div class="code-blocks-container"></div>')
 
   const taContainer: Cash = $('<div class="code-blocks-ta-container fieldset"></div>')
-  taContainer.append('<label for="initial">Code to Become Blocks</label>')
+  taContainer.append('<label for="initial">Code to Become Blocks RENDER TS</label>')
   const taCode: Cash = $(`<textarea id="initial" rows="7">${codeBlocks}</textarea>`)
   taCode.attr('placeholder', 'Type solution with expected indentation here')
   taContainer.append(taCode)
