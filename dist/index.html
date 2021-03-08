@@ -378,6 +378,8 @@
 
       parsonsPuzzle = new ParsonsWidget(settings.options);
       parsonsPuzzle.init(settings.initial);
+      var x = document.getElementsByClassName("containerTitle");
+      x[0].innerHTML = "Hello World!";
       parsonsPuzzle.shuffleLines();
     }
 
