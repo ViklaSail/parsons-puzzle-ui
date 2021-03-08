@@ -1003,7 +1003,9 @@
    };
 
    ParsonsWidget.prototype.init = function(text) {
-  	 // TODO: Error handling, parseCode may return errors in an array in property named errors.
+     // TODO: Error handling, parseCode may return errors in an array in property named errors.
+     console.log("PREVIEW-HOMMAT");
+     console.log(text);
      var initial_structures = this.parseCode(text.split("\n"), this.options.max_wrong_lines);
      this.model_solution = initial_structures.solution;
      this.extra_lines = initial_structures.distractors;
