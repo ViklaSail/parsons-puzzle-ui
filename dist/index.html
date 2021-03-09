@@ -316,6 +316,7 @@
     //var last_element = lines[lines.length - 1];
 
     lines.forEach(function(line,count,origarr){
+      console.log(line)
       wasRet = line.includes("\n");
       if (wasRet){
         tempBloc = tempBloc + line;
@@ -332,6 +333,7 @@
          blocs.push(line);
       }
     });
+    console.log(blocs);
     return blocs;
 }
 function getCode() {
