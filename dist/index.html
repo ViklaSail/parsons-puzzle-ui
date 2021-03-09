@@ -337,8 +337,9 @@
         //line.replace(/^\s+|\s+$/g, '');
         console.log("indesi carriagereturn")
         console.log(line.indexOf('\n'));
-        line.replace('\n','');
-        line.replace("\n","");
+        line.replace('\\n','');
+        line.replace("\\n","");
+        console.log(line);
         tempBloc = tempBloc+ line + " \\\\n ";
         wasRetBefore = true;
         if(count>=origarr.length-1){
