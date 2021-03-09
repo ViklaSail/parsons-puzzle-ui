@@ -939,6 +939,8 @@
          lineObject,
          errors = [],
          that = this;
+    console("PARSECODE FUNKTIOSSA");
+    console.log(lines);
      // Create line objects out of each codeline and separate
      // lines belonging to the solution and distractor lines
      // Fields in line objects:
@@ -949,7 +951,26 @@
      //   orig: the original index of the line in the assignment definition string,
      //     for distractors this is not meaningful but for lines belonging to the 
      //     solution, this is their expected position
+    /*
      $.each(lines, function(index, item) {
+     }
+
+      var rivi = "";
+      if (item.includes("\n")){
+        rivi = item;
+        if (rivi.includes("\n") {
+           item = rivi + item;
+        }
+      } 
+      item = rivi;
+
+     }
+     */
+     $.each(lines, function(index, item) {
+       // TÄHÄN PITÄÄ JOTENKIN ITEMIN YHDISTÄMINEN SEURAAVAAN
+       // IF ITEM lopussa on \n niin yhistä seuraavaan
+       console.log("EACH LINES TAALA");
+       console.log(item);
        lineObject = new ParsonsCodeline(item, that);
        lineObject.orig = index;
         if (item.search(/#distractor\s*$/) >= 0) {
