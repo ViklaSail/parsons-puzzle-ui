@@ -318,12 +318,12 @@
     lines.forEach(function(line,count,origarr){
       console.log(line)
       //wasRet = line.includes("\n");
-      wasRet = line.includes('\n');
+      wasRet = line.includes("\\n");
       console.log(line.indexOf("\n"));
       console.log(line.indexOf('\n'));
       console.log(line.includes('\n'));
       console.log(line.includes("\n"));
-      console.log(line.includes("\\n"));
+      console.log(line.includes("\\n"));//TÄMÄ ON TRUE!!! 
       console.log(line.indexOf("\r"));
       console.log(line.includes("\r"));
       console.log(line.indexOf('\r'));
