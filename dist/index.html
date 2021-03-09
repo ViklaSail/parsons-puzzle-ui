@@ -339,7 +339,7 @@
       console.log(" rivi" + line);
       var indeksi = line.indexOf('\\n');
       if (indeksi > 0) {
-          line = line.slice(0, indeksi) + line.slice(indeksi);
+          line = line.slice(0, indeksi) + line.slice(indeksi+2);
           console.log(line);
       }
   
