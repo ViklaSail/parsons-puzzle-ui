@@ -318,6 +318,7 @@
     lines.forEach(function(line,count,origarr){
       console.log(line)
       wasRet = line.includes("\n");
+      console.log(wasRet);
       if (wasRet){
         tempBloc = tempBloc + line;
         wasRetBefore = true;
