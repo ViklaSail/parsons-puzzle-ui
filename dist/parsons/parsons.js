@@ -939,7 +939,7 @@
          lineObject,
          errors = [],
          that = this;
-    console("PARSECODE FUNKTIOSSA");
+    console.log("PARSECODE FUNKTIOSSA");
     console.log(lines);
      // Create line objects out of each codeline and separate
      // lines belonging to the solution and distractor lines
