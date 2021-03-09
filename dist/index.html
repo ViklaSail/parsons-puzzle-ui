@@ -348,8 +348,7 @@ function getCode() {
     console.log(initial);
     var lines = initial.replace(/"/g, '\\"').split('\n');
     console.log(lines);
-    lines = putLinesToBlocks(lines);
-    console.log(lines);
+    console.log(putLinesToBlocks(lines));
     for (var i = 0; i < lines.length; i++) {
       var line = '\"' + lines[i];
       console.log(line);
