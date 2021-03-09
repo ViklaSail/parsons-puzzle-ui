@@ -336,12 +336,10 @@
       console.log("indesi carriagereturn")
       console.log(line.indexOf('\\n'));
       
-      //line.replace('\\n','');
-      //line.replace("\\n","");
       console.log(" rivi" + line);
       var indeksi = line.indexOf('\\n');
       if (indeksi > 0) {
-          line = line.slice(0, indeksi) + line.slice(indeksi+1);
+          line = line.slice(0, indeksi) + line.slice(indeksi);
           console.log(line);
       }
   
