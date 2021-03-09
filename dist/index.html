@@ -318,7 +318,7 @@
     lines.forEach(function(line,count,origarr){
       console.log(line)
       //wasRet = line.includes("\n");
-      wasRet = line.line.match(/\n/g);
+      wasRet = line.match(/\n/g);
       console.log(wasRet);
       if (wasRet){
         tempBloc = tempBloc + line;
