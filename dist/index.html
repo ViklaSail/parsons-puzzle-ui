@@ -332,7 +332,7 @@
       */
       console.log(wasRet);
       if (wasRet){
-        tempBloc = tempBloc+"\\\n" + line;
+        tempBloc = tempBloc+"\\\\n" + line;
         wasRetBefore = true;
         if(count>=origarr.length-1){
            blocs.push(tempBloc);
