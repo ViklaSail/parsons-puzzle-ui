@@ -951,21 +951,30 @@
      //   orig: the original index of the line in the assignment definition string,
      //     for distractors this is not meaningful but for lines belonging to the 
      //     solution, this is their expected position
-    /*
-     $.each(lines, function(index, item) {
-     }
 
-      var rivi = "";
-      if (item.includes("\n")){
-        rivi = item;
-        if (rivi.includes("\n") {
-           item = rivi + item;
+    var blocs = [];
+    var tempBloc="";
+    var wasRet = false;
+    var wasRetBefore = false;
+
+    lines.forEach(function(line,count,origarr){
+      wasRet = line.includes("\\n");
+      if (wasRet){
+        tempBloc = tempBloc + line;
+        wasRetBefore = true;
+        if(count>=origarr.length-1){
+          blocs.push(tempBloc);
         }
-      } 
-      item = rivi;
-
-     }
-     */
+      } else {
+        if(wasRetBefore){
+            blocs.push(tempBloc);
+            tempBloc="";
+        }
+        wasRetBefore = false;
+        blocs.push(line);
+      }
+    });
+    lines = blocs;
      $.each(lines, function(index, item) {
        // TÄHÄN PITÄÄ JOTENKIN ITEMIN YHDISTÄMINEN SEURAAVAAN
        // IF ITEM lopussa on \n niin yhistä seuraavaan
