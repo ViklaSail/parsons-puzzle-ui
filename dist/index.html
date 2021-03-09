@@ -308,10 +308,33 @@
     codeEditor.setValue(getCode(), -1);
     codeEditor.refresh();
   }
-  function putLinesToBlocks(){
+  function putLinesToBlocks(lines){
+    var blocs = [];
+    var tempBloc="";
+    var wasRet = false;
+    var wasRetBefore = false;
+    //var last_element = lines[lines.length - 1];
 
-  }
-  function getCode() {
+    lines.forEach(function(line,count,origarr){
+      wasRet = line.includes("\n");
+      if (wasRet){
+        tempBloc = tempBloc + line;
+        wasRetBefore = true;
+        if(count>=origarr.length-1){
+           blocs.push(tempBloc);
+        }
+      } else {
+         if(wasRetBefore){
+             blocs.push(tempBloc);
+             tempBloc="";
+         }
+         wasRetBefore = false;
+         blocs.push(line);
+      }
+    });
+    return blocs;
+}
+function getCode() {
     var initial = initialEditor.getValue();
     var options = optionsEditor.getValue();
 
@@ -324,6 +347,8 @@
     var initialJs = [];
     console.log(initial);
     var lines = initial.replace(/"/g, '\\"').split('\n');
+    console.log(lines);
+    lines = putLinesToBlocks(lines);
     console.log(lines);
     for (var i = 0; i < lines.length; i++) {
       var line = '\"' + lines[i];
