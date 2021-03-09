@@ -341,7 +341,7 @@
          if(wasRetBefore){
              console.log("blokin laittaminen listalle")
              console.log(tempBloc)
-             var res = tempBloc.replace("\\", "\\\\");
+             var res = tempBloc.replace("\n", "\\n");
              blocs.push(res);
              tempBloc="";
          }
