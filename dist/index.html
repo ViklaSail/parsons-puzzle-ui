@@ -335,11 +335,11 @@
       console.log(wasRet);
       console.log("indesi carriagereturn")
       console.log(line.indexOf('\\n'));
-      line = str.slice(0, 3) + str.slice(4);
-      line.replace('\\n','');
-      line.replace("\\n","");
+      
+      //line.replace('\\n','');
+      //line.replace("\\n","");
       console.log(" rivi" + line);
-      var indeksi = line.indexOf('\n');
+      var indeksi = line.indexOf('\\n');
       if (indeksi > 0) {
           line = line.slice(0, indeksi) + line.slice(indeksi+1);
           console.log(line);
