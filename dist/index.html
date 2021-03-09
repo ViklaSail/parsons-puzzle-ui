@@ -319,6 +319,7 @@
       console.log(line)
       //wasRet = line.includes("\n");
       wasRet = line.includes("\\n");
+      /*
       console.log(line.indexOf("\n"));
       console.log(line.indexOf('\n'));
       console.log(line.includes('\n'));
@@ -328,6 +329,7 @@
       console.log(line.includes("\r"));
       console.log(line.indexOf('\r'));
       console.log(line.includes('\r'));
+      */
       console.log(wasRet);
       if (wasRet){
         tempBloc = tempBloc + line;
@@ -339,7 +341,8 @@
          if(wasRetBefore){
              console.log("blokin laittaminen listalle")
              console.log(tempBloc)
-             blocs.push(tempBloc);
+             var res = tempBloc.replace("\\", "\\\\");
+             blocs.push(res);
              tempBloc="";
          }
          wasRetBefore = false;
