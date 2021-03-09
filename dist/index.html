@@ -361,9 +361,14 @@ function getCode() {
     options = options.replace('"trashId": "sortableTrash"', '"trashId": "'+prefix+'sortableTrash"');
     var initialJs = [];
     console.log(initial);
-    var lines = putLinesToBlocks(initial.replace(/"/g, '\\"').split('\n'));
+    var lines = initial.replace(/"/g, '\\"').split('\n');
     console.log(lines);
-    //console.log(putLinesToBlocks(lines));
+    var codeBlocStuff = putLinesToBlocks(lines);
+    console.log("putlinesToBlocs tulostama tavara")
+    console.log(codeBlocStuff);
+    lines = codeBlocStuff;
+    console.log("kopioitu linesiin, tulostetaan lines");
+    console.log(lines);
     for (var i = 0; i < lines.length; i++) {
       var line = '\"' + lines[i];
       console.log(line);
