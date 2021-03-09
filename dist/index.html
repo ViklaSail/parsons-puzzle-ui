@@ -318,7 +318,16 @@
     lines.forEach(function(line,count,origarr){
       console.log(line)
       //wasRet = line.includes("\n");
-      wasRet = line.match(/\n/g);
+      wasRet = line.includes('\n');
+      console.log(line.indexOf("\n"));
+      console.log(line.indexOf('\n'));
+      console.log(line.includes('\n'));
+      console.log(line.includes("\n"));
+      console.log(line.includes("\\n"));
+      console.log(line.indexOf("\r"));
+      console.log(line.includes("\r"));
+      console.log(line.indexOf('\r'));
+      console.log(line.includes('\r'));
       console.log(wasRet);
       if (wasRet){
         tempBloc = tempBloc + line;
