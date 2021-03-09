@@ -361,9 +361,9 @@ function getCode() {
     options = options.replace('"trashId": "sortableTrash"', '"trashId": "'+prefix+'sortableTrash"');
     var initialJs = [];
     console.log(initial);
-    var lines = initial.replace(/"/g, '\\"').split('\n');
+    var lines = putLinesToBlocks(initial.replace(/"/g, '\\"').split('\n'));
     console.log(lines);
-    console.log(putLinesToBlocks(lines));
+    //console.log(putLinesToBlocks(lines));
     for (var i = 0; i < lines.length; i++) {
       var line = '\"' + lines[i];
       console.log(line);
