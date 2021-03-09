@@ -332,7 +332,8 @@
       */
       console.log(wasRet);
       if (wasRet){
-        line.replace(/^\s+|\s+$/g, '');
+        //line.replace(/^\s+|\s+$/g, '');
+        line.replace('\n','');
         tempBloc = tempBloc+ line + " \\\\n ";
         wasRetBefore = true;
         if(count>=origarr.length-1){
