@@ -308,6 +308,9 @@
     codeEditor.setValue(getCode(), -1);
     codeEditor.refresh();
   }
+  function putLinesToBlocks(){
+
+  }
   function getCode() {
     var initial = initialEditor.getValue();
     var options = optionsEditor.getValue();
@@ -319,10 +322,12 @@
     options = options.replace('"sortableId": "sortable"', '"sortableId": "'+prefix+'sortable"');
     options = options.replace('"trashId": "sortableTrash"', '"trashId": "'+prefix+'sortableTrash"');
     var initialJs = [];
+    console.log(initial);
     var lines = initial.replace(/"/g, '\\"').split('\n');
+    console.log(lines);
     for (var i = 0; i < lines.length; i++) {
-      var line = '\"' + lines[i] + '//kommentti';
-      console.log("GETCODE-vunktiossa");
+      var line = '\"' + lines[i];
+      console.log(line);
       line += i < lines.length -1 ? '\\n' + '\" +' : '\"';
       initialJs.push(i !== 0 ? '    ' + line : line);
     }
