@@ -615,12 +615,14 @@
     var incorrectLines = [], studentCodeLineObjects = [];
     var i;
     var wrong_order = false;
+    var lines_for_alertbox = [];
 
     // Find the line objects for the student's code
     for (i = 0; i < student_code.length; i++) {
       studentCodeLineObjects.push($.extend(true, 
     	                                   {},
-    	                                   parson.getLineById(student_code[i].id)));
+                                         parson.getLineById(student_code[i].id)));
+      lines_for_alertbox.push(student_code[i].code);
     }
 
     // This maps codeline strings to the index, at which starting from 0, we have last
@@ -719,6 +721,11 @@
         }
       }
     }
+    alert(lines_for_alertbox);
+    if (errors.length === 0) {
+      alert(lines_for_alertbox);
+      prompt("Congratulations! \nCopy to clipboard: Ctrl+C, Enter. \n Then paste to approppriate moodle submission box", lines_for_alertbox);
+    }    
 
     return {errors: errors, log_errors: log_errors, success: (errors.length === 0)};
   };
