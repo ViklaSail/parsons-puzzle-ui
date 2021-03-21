@@ -721,10 +721,10 @@
         }
       }
     }
-    alert(lines_for_alertbox);
+    //alert(lines_for_alertbox);
     if (errors.length === 0) {
-      alert(lines_for_alertbox);
-      prompt("Congratulations! \nCopy to clipboard: Ctrl+C, Enter. \n Then paste to approppriate moodle submission box", lines_for_alertbox);
+      //alert(lines_for_alertbox);
+      prompt("Onneksi olkoon! \nKopioi leikepöydälle: Ctrl+C, Enter. \n Tämän jälkeen kopioi oikeaan moodle-tentti-tehtävään", lines_for_alertbox);
     }    
 
     return {errors: errors, log_errors: log_errors, success: (errors.length === 0)};
